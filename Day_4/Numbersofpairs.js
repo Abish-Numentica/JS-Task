@@ -39,5 +39,5 @@ function toObject(inputFromUser) {
   return outputData;
 }
 
-// Test case
+
 toObject([["name", "Arun"], ["age", 39]]);
