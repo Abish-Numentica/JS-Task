@@ -59,7 +59,7 @@ function findMissingNumbers(inputArray) {
   return true;
 }
 
-// Test Cases
+
 findMissingNumbers([7, 10, 12, 9]);     // Output: [8, 11]
 findMissingNumbers([1, 2, 3, 4, 5]);    // Output: []
 findMissingNumbers([100, 102, 105]);    // Output: [101, 103, 104]
