@@ -3,7 +3,10 @@ For example:
 reverseRotate("unar", 2)   // "arun"
 reverseRotate("llohe", 3)  // "hello"*/
 
-
+/*Logic: The function takes a string and a number, then shifts the characters by that number of positions in reverse order. 
+It validates the inputs and calculates the effective rotation using modulo. 
+The string is then rebuilt by slicing from the rotation point to the end, followed by the beginning up to the rotation point, producing the final rotated result
+*/
 function reverseRotate(inputString, rotateBy) {
   console.log("The Input String is: " + inputString);
   console.log("The Number of Positions to Reverse Rotate is: " + rotateBy);

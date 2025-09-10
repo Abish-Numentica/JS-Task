@@ -3,6 +3,11 @@ For example
 repeat(“arun”, 3);
 output “arunarunarun”;
 */
+/*Logic: 2The function takes two inputs—a string and an integer representing the number of times the string should be repeated.
+ A new result string is initialized, and a for loop is used to append the original string to it during each iteration.
+ This loop runs exactly as many times as specified by the integer input, ensuring the string is repeated the desired number of times.
+ Once the loop completes, the final repeated string is returned or printed.
+ */
 function repeatString(inputFromUser, repeatTimes) {
   console.log("The Input is "+inputFromUser);
   // Edge Case 1: Check if inputFromUser is a string

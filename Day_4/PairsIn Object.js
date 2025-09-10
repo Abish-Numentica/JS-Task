@@ -6,22 +6,28 @@ numberOfPairs(arr1, sum);
 // Pais that matches are [4, 2] => 6. [5, 1] => 6
 So output 2*/
 
+/*Logic: The function takes an array and a target sum, then finds all unique pairs of elements whose sum matches the target. 
+It validates the input and uses nested loops to check every possible pair.
+When a matching pair is found, it’s counted and stored.
+The final count represents the total number of valid pairs
+*/
+
 function numberOfPairs(arr, targetSum) {
     // Edge case: Check if input is a valid array
   if (!Array.isArray(arr)) {
     console.error("Input must be an array.");
-    return 0;
+    return false;
   }
 
   // Edge case1:Check if array has fewer than 2 elements
   if (arr.length < 2) {
-    return 0; // No pairs possible
+    return false; // No pairs possible
   }
 
   // Edge case2:Check if targetSum is a number
   if (typeof targetSum !== "number") {
     console.error("Target sum must be a number.");
-    return 0;
+    return false;
   }
 
   let count = 0;

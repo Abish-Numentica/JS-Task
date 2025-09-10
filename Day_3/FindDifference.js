@@ -5,6 +5,12 @@ const arr2 = [35, -7, 87, 11, 1, 45];
 findDifference(arr1, arr2)
 // Output: [3, 42, 34, 35, -7, 87, 1]*/
 
+/*Logic: The function compares two arrays and identifies numbers that exist in one but not the other.
+It first validates the inputs and ensures all elements are numeric.
+Then, using nested loops, it checks each value from both arrays and collects those that are not shared. 
+This results in a final list of unique values from both sides
+*/
+
 function findDifference(arr1, arr2) {
   console.log("The First Array is: " + arr1);
   console.log("The Second Array is: " + arr2);

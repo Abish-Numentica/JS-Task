@@ -4,6 +4,11 @@ Remove leading/trailing zeros from a numeric string without losing internal zero
 trimZeros(input, which='both') -> string
 // which: 'leading' | 'trailing' | 'both'*/
 
+/*Logic: The function takes a numeric string and removes leading and/or trailing zeros based on the selected option—leading, trailing, or both. 
+It manually parses the string to separate the sign, integer part, and decimal part, then trims zeros without affecting internal digits or structure.
+It also validates input format and handles edge cases like multiple decimals or invalid characters.
+*/
+
 function trimZeros(input, which) {
   console.log("The Input String is: " + input);
   console.log("The Trim Option Selected is: " + which);
@@ -55,7 +60,7 @@ function trimZeros(input, which) {
     }
   }
 
-  // Step 1: Extract sign
+  // Extract sign
   let sign = "";
   let start = 0;
   if (hasSign) {
@@ -63,7 +68,7 @@ function trimZeros(input, which) {
     start = 1;
   }
 
-  // Step 2: Split manually into integer and decimal parts
+  // Split manually into integer and decimal parts
   let intPart = "";
   let decPart = "";
 
@@ -79,7 +84,7 @@ function trimZeros(input, which) {
     }
   }
 
-  // Step 3: Trim leading zeros
+  // Trim leading zeros
   if (which === 'leading' || which === 'both') {
     let i = 0;
     while (i < intPart.length && intPart[i] === '0') {
@@ -96,7 +101,7 @@ function trimZeros(input, which) {
     }
   }
 
-  // Step 4: Trim trailing zeros
+  // Trim trailing zeros
   if ((which === 'trailing' || which === 'both') && decPart.length > 0) {
     let j = decPart.length - 1;
     while (j >= 0 && decPart[j] === '0') {
@@ -109,7 +114,7 @@ function trimZeros(input, which) {
     decPart = trimmed;
   }
 
-  // Step 5: Reconstruct final string
+  // Reconstruct final string
   let finalString = sign + intPart;
   if (hasDecimal && decPart.length > 0) {
     finalString += "." + decPart;

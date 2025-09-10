@@ -2,6 +2,13 @@
 For example:
 checkInRange([1, 10], 4) // true since 4 is in between 1
 checkInRange([10, 100], 8) // true false 8 is not in between 10 and 100*/
+
+/*Logic: The function checks if a given number falls within a specified numeric range. 
+It first validates that the range is an array with exactly two numbers and that the target is also a valid number.
+Then it compares the target against the start and end of the range to determine if it lies between them, returning true if it does and false otherwise.
+ */
+
+
 function checkInRange(rangeArray, targetNumber) {
   console.log("The Range Provided is: " + rangeArray);
   console.log("The Target Number to Check is: " + targetNumber);
@@ -32,10 +39,10 @@ function checkInRange(rangeArray, targetNumber) {
     const start = rangeArray[i];
     const end = rangeArray[i + 1];
     if (targetNumber >= start && targetNumber <= end) {
-     console.log("true");
+     console.log("True");
       return true;
     }
-  } console.log("false");
+  } console.log("False");
   return false;
 }
 

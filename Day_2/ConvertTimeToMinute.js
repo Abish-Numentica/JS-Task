@@ -9,6 +9,11 @@ Examples:
 "12:00 pm" → 720
 "24:00" → 1440
 "14:70" → throw (invalid minutes)*/
+/*Logic: The function takes a time string and converts it into total minutes.
+ It handles both 12-hour and 24-hour formats, removes spaces, and normalizes AM/PM. The time is split into hours, minutes, and optional seconds.
+  Each part is manually parsed and validated. Based on the rounding option (up, down, or nearest), seconds are used to adjust the final minute count. 
+  Invalid formats or values throw errors to ensure clean input.
+ */
 
 
 function toMinutes(timeStr, options) {
@@ -20,7 +25,7 @@ function toMinutes(timeStr, options) {
     return false;
   }
 
-
+//To Remove Space and Lower Case the AM/PM
   let input = "";
   for (let i = 0; i < timeStr.length; i++) {
     let ch = timeStr[i];
@@ -33,7 +38,7 @@ function toMinutes(timeStr, options) {
     }
   }
 
-
+//Removes "am" or "pm" from the string.
   let isAM = false;
   let isPM = false;
   let len = input.length;
@@ -46,7 +51,7 @@ function toMinutes(timeStr, options) {
     input = input.slice(0, len - 2);
   }
 
-
+//Split to HH, MM, SS Parts and add it as array values
   let parts = [];
   let current = "";
   for (let i = 0; i < input.length; i++) {
@@ -65,8 +70,8 @@ function toMinutes(timeStr, options) {
   }
 
 
-  
-  let h = 0, m = 0, s = 0;
+//Parse Hours, Minutes, Seconds  
+  let hours = 0, minutes = 0, seconds = 0;
 
   for (let i = 0; i < parts[0].length; i++) {
     let digit = parts[0][i] - '0';
@@ -74,7 +79,9 @@ function toMinutes(timeStr, options) {
       console.error("Error: Invalid hour digit '" + parts[0][i] + "'.");
       return false;
     }
-    h = h * 10 + digit;
+    hours = hours * 10 + digit;
+    //let hours = parseInt(parts[0], 10);
+
   }
 
   for (let i = 0; i < parts[1].length; i++) {
@@ -83,7 +90,9 @@ function toMinutes(timeStr, options) {
       console.error("Error: Invalid minute digit '" + parts[1][i] + "'.");
       return false;
     }
-    m = m * 10 + digit;
+    minutes = minutes * 10 + digit;
+    //let minutes = parseInt(parts[1], 10);
+
   }
 
   if (parts.length === 3) {
@@ -93,29 +102,30 @@ function toMinutes(timeStr, options) {
         console.error("Error: Invalid second digit '" + parts[2][i] + "'.");
         return false;
       }
-      s = s * 10 + digit;
+      seconds = seconds * 10 + digit;
+      //let seconds = parts.length === 3 ? parseInt(parts[2], 10) : 0;
     }
   }
 
 
-  if (m >= 60) {
+  if (minutes >= 60) {
     console.error("Error: Invalid time. Minutes must be less than 60.");
     return false;
   }
 
-  if (s >= 60) {
+  if (seconds >= 60) {
     console.error("Error: Invalid time. Seconds must be less than 60.");
     return false;
   }
 
-  if ((isAM || isPM) && h > 12) {
+  if ((isAM || isPM) && hours > 12) {
     console.error("Error: Invalid time. Hours must be ≤ 12 when using am/pm.");
     return false;
   }
 
 
-  if (isAM && h === 12) h = 0;
-  if (isPM && h < 12) h += 12;
+  if (isAM && hours === 12) h = 0;
+  if (isPM && hours < 12) h += 12;
 
 
   let minuteOffset = 0;
@@ -123,19 +133,19 @@ function toMinutes(timeStr, options) {
   if (typeof options === 'object' && typeof options.round === 'string') {
     mode = options.round;
   }
-
+//Rounding Off
   if (mode === 'up') {
-    minuteOffset = s > 0 ? 1 : 0;
+    minuteOffset = seconds > 0 ? 1 : 0;
   } else if (mode === 'nearest') {
-    minuteOffset = s >= 30 ? 1 : 0;
+    minuteOffset = seconds >= 30 ? 1 : 0;
   } else if (mode === 'down') {
     minuteOffset = 0;
   } else {
     console.error("Error: Invalid rounding option. Use 'up', 'down', or 'nearest'.");
     return false;
   }
-
-  let totalMinutes = h * 60 + m + minuteOffset;
+//Calculations
+  let totalMinutes = hours * 60 + minutes + minuteOffset;
   console.log("The Converted Minutes Are: " + totalMinutes);
   return totalMinutes;
 }

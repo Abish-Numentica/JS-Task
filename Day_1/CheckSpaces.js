@@ -1,5 +1,7 @@
 /*checkSpaces(“arun”) output false;
 checkSpaces(“user arun”) output true;*/
+/* Logic: If there is " " present inbetween array the output will be true So I need to run the loop to check whether there is " " in the string.
+ So I loop each character in the string and with if condition is applied to check whether there is " "(space) in it if it is there then return the output as true else false  */
 
 function checkSpaces(inputFromUser) {
   // Edge Case 1: Non-string input
@@ -28,7 +30,7 @@ function checkSpaces(inputFromUser) {
   }
 
   console.log("The Output for Checking the Spaces in the Given Input is: "+outputData);
-  return true
+  return outputData;
 }
 
 

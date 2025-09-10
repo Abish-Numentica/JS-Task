@@ -6,6 +6,11 @@ rotate("arun", 2)   // "unar"
 rotate("arun", -2)  // "unar" (left rotation)
 rotate("hello", 3)  // "llohe"*/
 
+/*Logic: The function rotates characters in a string by a given number of positions. 
+Positive values rotate to the right, and negative values rotate to the left.
+It first validates the input and normalizes the rotation using modulo.
+Then it rebuilds the string by slicing from the calculated rotation point, ensuring correct output regardless of direction.
+*/
 
 function rotate(inputString, rotateBy) {
   console.log("The Input String is: " + inputString);

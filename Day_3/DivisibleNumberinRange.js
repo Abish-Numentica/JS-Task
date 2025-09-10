@@ -4,6 +4,11 @@ isDivisibleInRange([1, 5], 60) // true  (60 is divisible by 1,2,3,4,5)
 isDivisibleInRange([1, 5], 15) // false (15 is not divisible by 4)
 isDivisibleInRange([2, 6], 120) // true  (120 % 2,3,4,5,6 === 0)*/
 
+/*Logic: The function checks whether a given number is divisible by every integer within a specified range. 
+It first validates the input types and ensures the range is properly ordered. 
+Then, using a loop, it tests divisibility for each number in the range. 
+If any number fails the check, it returns false; otherwise, it confirms the number is divisible by all values in the range.
+*/
 
 function isDivisibleInRange(rangeArray, targetNumber) {
   console.log("The Range Provided is: " + rangeArray);

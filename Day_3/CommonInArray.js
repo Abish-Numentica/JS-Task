@@ -4,6 +4,12 @@ const arr2 = [35, -7, 87, 11, 1, 45]
 findCommon(arr1, arr2)
 Output = [11, 45]*/
 
+/*Logic: The function compares two arrays and finds numbers that exist in both. 
+It first checks for valid input and ensures all elements are numeric. 
+Then, using nested loops, it checks each value from the first array against the second.
+If a match is found and hasn't already been added, it's pushed into the result.
+This ensures only unique common values are returned.
+*/
 
 function findCommon(arr1, arr2) {
   console.log("The First Array is: " + arr1);
@@ -61,7 +67,7 @@ function findCommon(arr1, arr2) {
   return true;
 }
 
-// Test Cases
+
 findCommon([3, 45, 42, 11, 34], [35, -7, 87, 11, 1, 45]); // Output: [11, 45]
 findCommon([1, 2, 3], [4, 5, 6]);                         // Output: []
 findCommon([], [1, 2, 3]);                                // Error: One or both arrays are empty
