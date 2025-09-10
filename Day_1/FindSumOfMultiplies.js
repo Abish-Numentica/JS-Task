@@ -3,6 +3,8 @@ For example
 findSum(5, 5) should return 5+10+15+20+25=75
 findSum(8, 3) should return 8+16+24=48
 */
+/*Logic: 2 Inputs one is Multiplier and Multiply. So through loop iteration use the formula n+n*i=>n(1+i).
+Use Number function to convert string represented number as considered as an Integer and get output */
 
 
 function sumOfMultiplies(getinputfromuser,inputMultplier){
@@ -30,13 +32,11 @@ function sumOfMultiplies(getinputfromuser,inputMultplier){
 let temporryVariable=0;
 for(let i=0;i<inputMultplier;i++)
 {
-    
-    {
-        temporryVariable+=Number(getinputfromuser)+(Number(getinputfromuser)*i);
-    
+ {
+    temporryVariable+=Number(getinputfromuser)+(Number(getinputfromuser)*i);   
+ }
 }
-
-}console.log("The sum of Multiplies of Given Input(5,5) :"+ temporryVariable);
+console.log(`The sum of Multiplies of Given Input(${getinputfromuser},${inputMultplier}) :+ ${temporryVariable}`);
  return true;
 }
 

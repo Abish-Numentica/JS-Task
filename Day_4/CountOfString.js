@@ -2,6 +2,10 @@
 count(["a", "b", "a", "c", "b", "a"]);
 // Output: { a: 3, b: 2, c: 1 }*/
 
+/*Logic: The function takes an array of strings and counts how many times each string appears.
+It first validates the input and skips any non-string values. 
+Then, using a loop, it builds an object where each key is a string from the array and its value is the count of occurrences.
+*/
 
 function countStrings(inputFromUser) {
   console.log("The Given Array is:", inputFromUser);

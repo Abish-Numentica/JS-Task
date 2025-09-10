@@ -2,6 +2,10 @@
 For example
 findEvenSum([38, 3, 2, 8, 31])
 output -  48 */
+/*Logic: The function takes an array of numbers and checks each element to find even numbers. 
+All even numbers are collected into a temporary array, and then a second loop adds them together to get the final sum. 
+Edge cases like non-array input, empty arrays, and non-numeric values are handled to ensure valid processing.
+ */
 
 
 function sumOfEvenNumbers(numbers)

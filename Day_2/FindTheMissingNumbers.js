@@ -4,6 +4,11 @@ Example: Given an array of numbers in random order, find the missing numbers
 [7, 10, 12, 9] // output [8, 11] since these are the numbers missing in 7, 9, 10, 12
 Note: The numbers will be given as input in any order.*/
 
+/*Logic: The function takes an array of numbers and identifies which values are missing between the smallest and largest numbers in the array. 
+It first checks for valid input and ensures all elements are integers. 
+Then it finds the minimum and maximum values, and loops through that range to check which numbers are not present in the original array.
+Those missing numbers are collected and returned.
+*/
 function findMissingNumbers(inputArray) {
   console.log("The Input Array is: " + inputArray);
 

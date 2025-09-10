@@ -3,6 +3,9 @@ for example: convertNumberToString(1)
 output “one”
 convertNumberToString(98)
 output “nineeight”*/
+/*Logic: Create an Object with each key as Integer with value as string representation of the Number.
+Using loop iterate each element and convert to a seperate value and store it in an array.
+Each value in array using object value assign the value respective of key. So the Integer is converted to String*/
 
 function convertNumberToString(inputFromUser) {
     // Edge Case 1: Input is not a number
@@ -38,18 +41,27 @@ function convertNumberToString(inputFromUser) {
     };
 
      // Convert the number to a string and then to an array of digits
-    const digits = inputFromUser.toString().split('');
-    
-    // Initialize an empty string for the result
+    //const digits = inputFromUser.toString().split('');
+const digits=[];
+if (inputFromUser === 0) {
+        console.log("zero");
+        return true;
+    }
+
+while (inputFromUser > 0) {
+  let digit = inputFromUser % 10;
+  digits.unshift(digit);
+  inputFromUser = Math.floor(inputFromUser / 10);
+}
+
     let stringRepresentation = '';
-    // Convert each digit to its corresponding string representation using a for loop
+    
     for (let i = 0; i < digits.length; i++) {
         stringRepresentation += numberToStringData[digits[i]];
     }
     console.log(stringRepresentation);
-    return true;}
-
-
+    return true;
+}
 
 convertNumberToString(98); 
 convertNumberToString(0); 

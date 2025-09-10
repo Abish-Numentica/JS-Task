@@ -2,7 +2,10 @@
 toObject([["name", "Arun"], ["age", 39]]);
 // Output: { name: "Arun", age: 39 } */
 
-
+/*Logic: The function takes an array of key-value pairs and converts it into an object.
+It first checks for valid input and skips any invalid pairs.
+Then, using a loop, it assigns each key-value pair to the output object, building a clean structure from the array.
+*/
 function toObject(inputFromUser) {
   console.log("The Given Array is:", inputFromUser);
 

@@ -4,6 +4,11 @@ For example: checkInRange([1, 10], 4) // true since 4 is in between 1 and 10
 checkInRange([10, 100], 8) // true false 8 is not in between 10 and 100
 inRange([new Date('2025-01-01'), new Date('2025-02-01')], new Date('2025-02-01'); // false*/
 
+/*Logic: The function checks if a given number or date falls within a specified range. 
+It first validates that the range is an array with two values of the same type, and that the target value matches that type. 
+Then it compares the target against the minimum and maximum of the range to determine if it's within bounds.
+*/
+
 function checkInRange(rangeArray, targetValue) {
   console.log("The Range Provided is: " + rangeArray);
   console.log("The Target Value to Check is: " + targetValue);
@@ -32,7 +37,8 @@ function checkInRange(rangeArray, targetValue) {
   }
 
 const [start, end] = rangeArray  
-return targetValue >= start && targetValue <= end;
+return targetValue >= Math.min(start, end) && targetValue <= Math.max(start, end);
+
 
 }
 

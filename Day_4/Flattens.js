@@ -3,6 +3,11 @@ For example:
 flatten([1, 2, [3, 4]]);
 output: [1,2,3,4]*/
 
+/*Logic: The function takes an array and flattens any nested arrays within it by one level. 
+It checks for valid input and loops through each element—if an element is an array,
+its items are added individually to the output; otherwise, the element is added directly.
+This builds a single-level array from mixed input.
+*/
 
 function flatten(inputFromUser) {
   console.log("The Given Array is:", inputFromUser);
@@ -15,8 +20,8 @@ function flatten(inputFromUser) {
 
   // Edge Case 2: Empty array
   if (inputFromUser.length === 0) {
-    console.warn("Warning: Empty array provided.");
-    return [];
+    console.error("Warning: Empty array provided.");
+    return false;
   }
 
   let outputData = [];

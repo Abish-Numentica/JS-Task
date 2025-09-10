@@ -2,7 +2,10 @@
 const inputArr = [34, 12, 10, 15, 7, 21, 81]
 Output = [{1: [34, 12, 10, 15, 7, 21, 81]}, { 2: [34, 12, 10]}, {3: [12, 15, 21, 81] }]*/
 
-
+/*Logic: The function takes an array of numbers and groups them based on their divisibility by numbers from 1 to 10. 
+It validates the input and loops through each divisor, collecting numbers that are divisible by it.
+Each group is stored as an object and added to the final output array
+*/
 
 function groupMultiples(inputFromUser) {
   // Edge Case 1: Input is not an array

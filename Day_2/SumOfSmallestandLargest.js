@@ -3,6 +3,13 @@
 Example: [45, 2, 25, 11, 16]
 Here the output will be 2(smallest) + 45 (largest)
 Output will be 47*/
+
+
+/*Logic: The function takes an array of numbers and finds the smallest and largest values. 
+It checks for valid input and ensures all elements are numeric. 
+Then it loops through the array to identify the minimum and maximum values, adds them together, and returns the sum.
+*/
+
 function sumOfMinMax(inputArray) {
   console.log("The Input Array is: " + inputArray);
 

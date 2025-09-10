@@ -5,6 +5,12 @@ Output: a
 // since a has more repeating simaltaneously
 */
 
+/*Logic: The initial character is assigned to currentChar, and the count is set to 1, assuming each character appears at least once.
+ As the loop iterates through the string, if the next character matches currentChar, the count is incremented. When a different character is encountered, 
+ the current character and its count are recorded, and both currentChar and count are reset—currentChar becomes the new character, and count is reinitialized to 1. 
+ This process continues until the loop ends, allowing us to track the frequency of each repeating character in sequence.
+*/
+
 function charRepeating(inputFromUser) {
   console.log("The Input is:", inputFromUser);
 

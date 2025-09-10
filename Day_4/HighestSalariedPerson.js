@@ -7,7 +7,10 @@ const employees = [
 highestSalary(employees);
 // Output: { IT: {name:"Jane", salary:750}, HR: {name: "Deepak", salary: 500} }*/
 
-
+/*Logic: The function takes an array of employee objects and finds the highest-paid person in each department.
+It validates the input and loops through each employee, updating the result only if the current employee has a higher salary than the one already stored for that department.
+This builds an object with the top earner per department.
+*/
 
 
 function highestSalary(inputFromUser) {

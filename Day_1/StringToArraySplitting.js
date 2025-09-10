@@ -2,6 +2,9 @@
 For example
 stringSplit(“numenticaui”, 2);
 Output [“nu”, “me”, “nt”, “ic”, “au”, “i];*/
+/*Logic:The function takes a string and a number as input. It uses a loop to go through each character and groups them into chunks based on the given number. 
+When the chunk reaches the specified length or it's the last character, 
+it adds the chunk to the output array and resets the temporary string to start the next group */
 
 function stringSplit(inputData, splitNumber) {
   console.log("The Input is "+inputData );

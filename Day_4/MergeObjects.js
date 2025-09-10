@@ -6,6 +6,11 @@ merge(
 // Output: { fruits: ["apple", "banana"], veggies: ["carrot"], drinks: ["water"] }
 */
 
+/*Logic: The function takes two objects with array values and merges them into a single object. 
+It checks for valid input and loops through each key in both objects. If a key exists in both, their arrays are combined; 
+if a key is unique to one object, its array is added directly. This ensures all array values are grouped correctly under their respective keys.
+*/
+
 function merge(inputFromUser1, inputFromUser2) {
   console.log("Input Object 1:", inputFromUser1);
   console.log("Input Object 2:", inputFromUser2);

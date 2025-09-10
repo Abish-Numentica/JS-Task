@@ -5,7 +5,11 @@ const string = “Numentica is a company focused on delivering high quality code
 replaceTemplateString(string, [[“location”, “Chennai”], [“state”, “Tamil Nadu”], [“phone”, “9840164723"]])
 Output: Numentica is a company focused on delivering high quality code. It is located in Chennai Tamil Nadu 9840164723*/
 
-
+/*Logic: The function takes a template string and a list of key-value pairs.
+ It scans the string for placeholders in the format #[key], and replaces each with its corresponding value from the list. 
+ If a key is not found, the placeholder remains unchanged. 
+ The function also includes input validation to ensure the template and replacements are properly structured.
+*/
 function replaceTemplateString(template, replacements) {
   console.log("The Input Template is: " + template);
   console.log("The Replacement Pairs Are: " + replacements);

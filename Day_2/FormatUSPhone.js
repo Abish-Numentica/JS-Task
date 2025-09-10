@@ -4,6 +4,13 @@ Convert a ten digit number into US phone formatting "(AAA) BBB-CCCC"
 For example: 9840164723 to "(984)016-473"
 Throw error if it's not a valid phone number*/
 
+
+/*Logic: The function takes a number or numeric string and formats it into the US phone style "(AAA) BBB-CCCC". 
+It first removes any non-digit characters and checks if the cleaned string has exactly 10 digits. 
+If valid, it builds the formatted output using manual loops. 
+If the input is invalid or not exactly 10 digits, it throws an error.
+*/
+
 function formatUSPhone(phoneNumber) {
   console.log("The Input Phone Number is: " + phoneNumber);
 

@@ -7,6 +7,10 @@ Output [“a”, “d”, 1, “cd”, 33];
 filterOut([“a”, “d”, 1, true, “cd”, 33], “string”);
 Output [1, true, 33];*/
 
+/*Logic: We get two Inputs one is the array and other one string which is the Data type which has to be removed.
+so iterate each item throug loop and add an if condition to check the each value or the string with the datatype.
+If the array value and data type are not equal using a push method add to a new array */
+
 
 function filterOutInvalidItems(inputFromUser,typeOfRemove){
  
@@ -27,6 +31,8 @@ function filterOutInvalidItems(inputFromUser,typeOfRemove){
     console.error( "Invalid type to remove");
     return false;
   }
+
+
     let outputForInput = [];
 for (let j = 0; j < inputFromUser.length; j++) {
     if (typeof inputFromUser[j] !== typeOfRemove) {
@@ -34,6 +40,7 @@ for (let j = 0; j < inputFromUser.length; j++) {
     }}
 
 
+  
     // Edge case 4: Output has no value
     if(outputForInput.length==0)
         {
